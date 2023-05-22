@@ -1,0 +1,28 @@
+# Travis CI配置文件示例
+# 指定使用Node.js作为构建环境
+language: node_js
+# 指定使用stable版本
+node_js:
+  - "stable"
+# 缓存node_modules目录以加速构建
+cache:
+  directories:
+    - node_modules
+# 设置环境变量CI=true
+env:
+  - CI=true
+# 执行npm run build-storybook命令来构建
+script:
+  - npm run build-storybook
+# 部署到GitHub Pages上
+deploy:
+  provider: pages
+  # 构建过程中不删除现有文件
+  skip_cleanup: true
+  # 在GitHub仓库的Settings页面中设置github_token环境变量，用于授权Travis CI访问你的GitHub仓库
+  github_token: $github_token
+  # 保留历史版本
+  keep_history: true
+  # 只有在master分支上进行部署操作
+  on:
+    branch: master

@@ -1,0 +1,31 @@
+{
+    // Typescript编译器选项
+    "compilerOptions": {
+      // 编译产物输出目录
+      "outDir": "dist",
+      // 模块格式为ESNext
+      "module": "esnext",
+      // 目标ECMAScript版本为ES5
+      "target": "es5",
+      // 生成声明文件
+      "declaration": true,
+      // JSX语法支持
+      "jsx": "react",
+      // 模块解析策略为Node.js
+      "moduleResolution": "Node",
+      // 允许合成默认导入(import ... from 'module')形式
+      "allowSyntheticDefaultImports": true,
+    },
+    // TypeScript编译器应该包含的目录
+    "include": [
+      "src"
+    ],
+    // TypeScript编译器应该排除的文件
+    "exclude": [
+      // 排除测试文件
+      "src/**/*.test.tsx",
+      // 排除Storybook文件
+      "src/**/*.stories.tsx",
+      "src/**/*.stories.ts",
+    ]
+  }
