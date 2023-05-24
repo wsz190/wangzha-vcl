@@ -1,6 +1,6 @@
 {
   "name": "wangzha-component",
-  "version": "0.1.2",
+  "version": "0.1.7",
   "private": false,
   "description": "React component library",
   "author": "conponent wangzha",
@@ -22,13 +22,19 @@
     "dist"
   ],
   "dependencies": {
-    "classnames": "^2.3.2"
+    "@fortawesome/fontawesome-svg-core": "^6.4.0",
+    "@fortawesome/free-solid-svg-icons": "^6.4.0",
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "@types/react-transition-group": "^4.4.6",
+    "@types/storybook__addon-info": "^5.2.5",
+    "babel-plugin-macros": "^3.1.0",
+    "classnames": "^2.3.2",
+    "react-transition-group": "^4.4.5"
   },
   "peerDependencies": {
     "react": ">16.8.0",
     "react-dom": ">16.8.0"
-  },
-  "scripts": {
+  }, 
     "start": "react-scripts start",
     "clean": "rimraf ./dist",
     "lint": "eslint --ext js,ts,tsx src --max-warnings 5",
@@ -44,7 +50,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit":"npm run test:nowatch && npm run lint"
+      "pre-commit": "npm run test:nowatch && npm run lint"
     }
   },
   "eslintConfig": {
@@ -68,8 +74,10 @@
   },
   "devDependencies": {
     "@storybook/addon-essentials": "^7.0.12",
+    "@storybook/addon-info": "^5.3.21",
     "@storybook/addon-interactions": "^7.0.12",
     "@storybook/addon-links": "^7.0.12",
+    "@storybook/addon-storysource": "^7.0.15",
     "@storybook/blocks": "^7.0.12",
     "@storybook/preset-create-react-app": "^7.0.12",
     "@storybook/react": "^7.0.12",
@@ -91,6 +99,7 @@
     "normalize.css": "^8.0.1",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
+    "react-docgen-typescript-loader": "^3.7.2",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
     "storybook": "^7.0.12",

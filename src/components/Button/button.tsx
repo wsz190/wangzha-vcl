@@ -23,8 +23,11 @@ export type ButtonType = 'primary' | 'default' | 'danger' | 'link';
 // 定义BaseButtonProps 接口类型，包括标签类名(classname)、是否不可用(disabled)、
 // 标签大小(size)、标签类型(btnType)、标签内容(children)、超链接地址（href）
 interface BaseButtonProps  {
+    /**按钮样式名 */
     className?:string;
+    /**是否禁用 */
     disabled?:boolean;
+    /**按钮大小 */
     size?:ButtonSize;
     btnType?:ButtonType;
     children:React.ReactNode;
@@ -36,7 +39,15 @@ type NativeButtonProps = BaseButtonProps & ButtonHTMLAttributes<HTMLElement>
 type AnchorButtonProps = BaseButtonProps & AnchorHTMLAttributes<HTMLElement>
 export type ButtonProps = Partial<NativeButtonProps & AnchorButtonProps>
 
-// 定义Button为一个React函数组件，参数类型为ButtonProps，返回值为JSX表达式
+/**
+ * Button 按钮
+ *
+ * ~~~js
+ * // 这样引用
+ * import { Button } from 'wangzha-component'
+ * ~~~
+ *
+ */
 export const Button:FC<ButtonProps> = (props) => {
     const {btnType,className,disabled,size,children,href,...restProps} = props; // 解构ButtonProps参数
     const classes = classNames('btn',className,{
