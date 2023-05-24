@@ -20,7 +20,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Primary: Story = { 
+export const Primary: Story = {
     name:'default',//故事命名
     args: {
         btnType:'default',
@@ -42,5 +42,4 @@ export const Secondary: Story = {
         size:'small',
         children:'default',
     },
-   
   };
